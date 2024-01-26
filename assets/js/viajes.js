@@ -1,27 +1,57 @@
 $(document).ready(function () {
-});
-   // Tooltip initialization
+  // Configuración del carrusel
+  var slideInterval = 5000; // Intervalo de cambio de diapositiva en milisegundos
+  var $carousel = $('#carouselExampleIndicators');
+  
+  // Función para cambiar a la siguiente diapositiva
+  function nextSlide() {
+    $carousel.carousel('next');
+  }
 
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+  // Iniciar intervalo de cambio automático
+  var intervalId = setInterval(nextSlide, slideInterval);
 
-$(document).ready(function () {
-   // Tooltip initialization
-   $('[data-bs-toggle="tooltip"]').tooltip();
+  // Detener el intervalo cuando el mouse está sobre el carrusel
+  $carousel.mouseenter(function() {
+    clearInterval(intervalId);
+  });
 
-   // Evento click boton tooltip formulario
-   $(".d-inline-block").click(function () {
-       alert("El correo fue enviado correctamente...");
-   });
+  // Reanudar el intervalo cuando el mouse sale del carrusel
+  $carousel.mouseleave(function() {
+    intervalId = setInterval(nextSlide, slideInterval);
+  });
 
-   // Selectores de etiqueta titulos de las section
-   $(".display-4").dblclick(function () {
-       $(this).css("color", "red");
-   });
- 
-// Selectores de clase descripcion tarjetas ocultar/mostrar
-$(".card-img-top").click(function () {
+  // Tooltip initialization
+  $('[data-bs-toggle="tooltip"]').tooltip();
+
+  // Evento click boton tooltip formulario
+  $(".d-inline-block").click(function () {
+    alert("El correo fue enviado correctamente...");
+  });
+
+  // Selectores de etiqueta titulos de las section
+  $(".display-4").dblclick(function () {
+    $(this).css("color", "red");
+  });
+
+  // Selectores de clase descripcion tarjetas ocultar/mostrar
+  $(".card-img-top").click(function () {
     $(this).siblings(".card-body").toggle();
-});
+  });
 
+  // Evento click enlaces de la barra de navegación
+  $('#menu a.nav-link').on('click', function (event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+
+      var hash = this.hash;
+
+      // Animación de desplazamiento suave
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function () {
+        window.location.hash = hash;
+      });
+    }
+  });
 });

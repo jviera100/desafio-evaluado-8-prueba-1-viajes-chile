@@ -4,19 +4,23 @@
   padding: 0; /*espacio entre elementos*/
   border: 0;    /*borde*/
 }
+
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: 'Cabin', sans-serif;
   background-color: #000;
   color: #fff;
+ 
+  
 
 }
   /* Estilos para la barra de navegación */
   #menu {
-    background-color: transparent;
-    scroll-behavior: smooth;
-    opacity: 0.5; /* Opacidad de los puntos inactivos */
-    transition: opacity 0.6s ease;
+    background-color: transparent;     
 }
+
 
     /* Estilos para el carrusel */
     .carousel-container-fluid {
