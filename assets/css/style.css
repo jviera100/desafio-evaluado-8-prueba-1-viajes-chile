@@ -16,6 +16,10 @@ body {
   
 
 }
+/* Etamaño logo nav */
+.logo-viajes { 
+  width: 50px;
+}
   /* Estilos para la barra de navegación */
   #menu {
     background-color: transparent;     
