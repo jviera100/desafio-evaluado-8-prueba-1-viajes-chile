@@ -50,9 +50,9 @@
   <!-- navbar -->
   <section>
   <nav id="menu" class="navbar navbar-expand-lg fixed-top navbar-dark">
-    <!-- expande en telefono  -->
+    <!-- expande nav, fijado se pone encima de la section de abajo, se elimina el bg-color para darle color con css  -->
     <div class="container-fluid px-4">
-      <!-- espacio horizontal -->
+      <!-- container-fluid ocupa todo el ancho de la pantalla -->
       <a href="#">
         <img class="logo-viajes" src="./assets/img/viajes.svg" alt="logo-viajes">
       </a>
@@ -78,10 +78,9 @@
       <div
         class="collapse navbar-collapse"
         id="navbarSupportedContent"
-      >
-        <!-- cambie nombre (tengo duda)????? "navbarNav"  -->
+      >        
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fs-5">
-          <!--alineacion derecha y formato (f-5 tengo duda)???-->
+          <!--alineacion de nav a la derecha y formato (f-5 tengo duda)???-->
           <li class="nav-item active">
             <!--activado-->
             <a
@@ -126,7 +125,7 @@
 
 
   <section id="inicio" class="carusel container-fluid">
-    <div id="carouselExampleIndicators" class="carousel slide d-none d-sm-none d-md-block" data-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
                 class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -167,9 +166,9 @@
     
 
 
-   
-    <div id="quienes-somos" class="container text-left d-lg-none d-md-none d-none d-sm-none my-4">
-      <hr class="container text-left d-lg-none d-md-none d-none d-sm-none my-4">
+    <!-- section desaparece en pantalla pequeña -->
+    <div id="quienes-somos" class="container text-left d-none d-sm-block pt-5 my-4">
+      <hr class="container text-left">
       <div class="row">        
         <h2 class="display-4 text-center font-weight-bold ">¿Quiénes Somos?</h2> 
         <hr>
@@ -233,20 +232,19 @@
   
 
   <!-- grid & card -->
-  <section id="destacados" class="container text-center my-5 pt-3">
-    <!-- espacio superior -->   
+  <section id="destacados" class="container text-center my-5 pt-3">      
     <h2 class="display-4 text-center font-weight-bold ">DESTACADOS</h2>
     <hr>
     <div class="card-deck"></div>
     <div class="row px-5">      
       <!-- primera -->
       <div class="col-sm-3 col-12 px-5 mb-4">
-        <!-- formato tarjeta -->
+        <!-- definir cuantas tarjetas se veran en el ancho de la pagina, 3 de 12, se veran 4 tarjetas -->
         <div
           class="card"
           style="width: 18rem"
         >
-          <!-- ancho fijo tarjeta -->
+          <!-- ancho y alto fijo tarjeta -->
           <img
             src="./assets/img/card1.jpg"
             class="card-img-top"

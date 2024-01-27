@@ -49,7 +49,7 @@ $(document).ready(function () {
       // Animación de desplazamiento suave
       $('html, body').animate({
         scrollTop: $(hash).offset().top
-      }, 800, function () {
+      }, 100, function () {        // desplazamiento suave si pongo 800 se mueve lento
         window.location.hash = hash;
       });
     }
